@@ -1,0 +1,46 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Edit Rules</h3>
+            <div class="card-tools">
+                <a type="button" class="btn btn-info btn-sm" href="/rules">
+                    <i class="fa fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+        <form method="POST" action="/rules/{{ data['id'] }}/update">
+	        <div class="card-body">
+	        	
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Gejala</label>
+	        		<div class="col-md-5">
+	        			<select class="form-control" name="gejala" required>
+	        				<option value="">-- Pilih Gejala --</option>
+	        				{% for g in gejala %}
+	        					<option value="{{ g['id'] }}" {% if(g['id'] == data['gejala_id']) %} selected {% endif %} >({{ g['kode_gejala'] }}) {{ g['nama_gejala'] }}</option>
+	        				{% endfor %}
+	        			</select>
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Penyakit</label>
+	        		<div class="col-md-5">
+	        			<select class="form-control" name="penyakit" required>
+	        				<option value="">-- Pilih Penyakit --</option>
+	        				{% for p in penyakit %}
+	        					<option value="{{ p['id'] }}" {% if(p['id'] == data['penyakit_id']) %} selected {% endif %} >({{ p['kode_penyakit'] }}) {{ p['nama_penyakit'] }}</option>
+	        				{% endfor %}
+	        			</select>
+	        		</div>
+	        	</div>
+
+	        </div>
+	        <div class="card-footer">
+	        	<button class="btn btn-primary">Update</button>
+	        </div>
+        </form>
+    </div>
+{% endblock  %}

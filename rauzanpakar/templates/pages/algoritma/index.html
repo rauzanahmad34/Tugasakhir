@@ -1,0 +1,26 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">Daftar Hasil Analisa</h3>
+        <div class="card-tools">
+            <a href="/algoritma/create" class="btn btn-primary">Lakukan Analisa Baru</a>
+        </div>  
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped data-table">
+            <thead>
+                <tr>
+                    <th style="width: 10px;">No</th>
+                    <th>Tanggal</th>
+                    <th>Nama</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+{% endblock  %}
+
+{% block script %} {% endblock %}

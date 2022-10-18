@@ -1,0 +1,55 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">Test Analisa Baru</h3>
+        <div class="card-tools">
+            <a type="button" class="btn btn-info btn-sm" href="/algoritma">
+                <i class="fa fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </div>
+    <form method="POST" action="/algoritma/analisa">
+        <div class="card-body">
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Nama Pasien</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Nama Pasien" name="nama" required="">
+                </div>
+            </div>
+            <center><h3>DAFTAR GEJALA</h3></center>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama Gejala</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in gejala %}
+                        <tr>
+                            <td class="form" name="kode_gejala">{{item['kode_gejala']}}</td>
+                            <td name="nama_gejala">{{item['nama_gejala']}}</td>
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" name="gejala" value="{{ item['id'] }}" class="form-check-input" id="exampleCheck{{ loop.index }}">
+                                    <label class="form-check-label" for="exampleCheck{{ loop.index }}">Yes</label>
+                                </div>
+                                <!-- <select class="form-control" name="bobot">
+                                    <option value="0">Tidak</option>
+                                    <option value="0.15">Ya</option>
+                                </select> -->
+                            </td>
+                        </tr>
+                    {%endfor%}                                                        
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Analisa</button>
+        </div>
+    </form>
+</div>
+{% endblock  %}

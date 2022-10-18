@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+	<thead>
+		<th>Customer</th>
+		<th>Jumlah Qty</th>
+	</thead>
+	<tbody>
+		{% for item in data %}
+			<tr>
+				<td>{{ item['nama_member'] }}</td>
+				<td>{{ item['total'] }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

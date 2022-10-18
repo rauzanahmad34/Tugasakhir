@@ -1,0 +1,21 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">Hasil Analisa</h3>
+    </div>
+    <div class="card-body">
+        <center><h3>Hasil Analisa</h3></center>
+        Jenis Penyakit : <br>
+        <b>- {{ penyakit['nama_penyakit'] }}</b>
+        <br>
+        Persentasi : <br>
+        <b>- {{ persentasi }} %</b><br>
+        Solusi : <br>
+        <p>- {{ penyakit['solusi'] }}</p>
+    </div>
+</div>
+{% endblock  %}
+
+{% block script %} {% endblock %}

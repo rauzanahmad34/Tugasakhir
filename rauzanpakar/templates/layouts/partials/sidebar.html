@@ -1,0 +1,62 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="{{ url_for('static', filename='adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Menu</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fa fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>User</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/berita" class="nav-link">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>Berita</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/penyakit" class="nav-link">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>Penyakit</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/gejala" class="nav-link">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>Gejala</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/rules" class="nav-link">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>Rules</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a href="/algoritma" class="nav-link"> -->
+                    <a href="/algoritma/create" class="nav-link">
+                        <i class="nav-icon fa fa-chart-line"></i>
+                        <p>Test Analisa</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

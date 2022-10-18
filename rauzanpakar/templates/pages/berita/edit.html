@@ -1,0 +1,35 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Edit</h3>
+            <div class="card-tools">
+                <a type="button" class="btn btn-info btn-sm" href="/berita">
+                    <i class="fa fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+        <form method="POST" action="/berita/{{ data['id'] }}/update">
+	        <div class="card-body">
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Judul</label>
+	        		<div class="col-md-10">
+	        			<input type="text" class="form-control" placeholder="Kode Gejala" name="judul" required="" value="{{ data['judul'] }}">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Isi Berita</label>
+	        		<div class="col-md-10">
+	        			<textarea id="summernote" name="isi">{{ data['isi'] }}</textarea>
+	        		</div>
+	        	</div>
+
+	        </div>
+	        <div class="card-footer">
+	        	<button class="btn btn-primary">Update</button>
+	        </div>
+        </form>
+    </div>
+{% endblock  %}

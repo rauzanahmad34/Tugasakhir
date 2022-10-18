@@ -1,0 +1,72 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Data Tweet Baru</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped data-table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Username</th>
+                        <th>Tweet</th>
+                        <th>web</th>
+                        <th>created_at</th>
+                        <th>location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, i in data.iterrows() %}
+                    <tr>
+                        <td>{{ i['id'] }}</td>
+                        <td>{{ i['username'] }}</td>
+                        <td>{{ i['tweet'] }}</td>
+                        <td>{{ i['web'] }}</td>
+                        <td>{{ i['created_at'] }}</td>
+                        <td>{{ i['location'] }}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+                <!-- {{data| safe}} -->
+            </table>
+            
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Data Hasil Processing</h3>
+            <br>
+            <h3>{{total_label}}</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped data-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>User</th>
+                        <th>Tweet</th>
+                        <th>Stem</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, i in data2.iterrows() %}
+                    <tr>
+                        <td>{{ i['id'] }}</td>
+                        <td>{{ i['date'] }}</td>
+                        <td>{{ i['user'] }}</td>
+                        <td>{{ i['tweet'] }}</td>
+                        <td>{{ i['stem'] }}</td>
+                        <td>{{ i['label'] }}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody> 
+            </table>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block script %} {% endblock %}

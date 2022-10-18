@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "59b030bc-8bd7-4a4f-936e-4d159620e593",
+		"name": "DS - Rauzan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bambang",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "bambangkun2021@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}api/register",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "bambangkun2021@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}api/login",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gejala",
+			"item": [
+				{
+					"name": "List Gejala",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}api/get-list-gejala",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"get-list-gejala"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analisa",
+			"item": [
+				{
+					"name": "List Hasil Analisa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}api/get-list-hasil?user_id=2",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"get-list-hasil"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Analisa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "Bambangkun",
+									"type": "text"
+								},
+								{
+									"key": "gejala",
+									"value": "3,4,6,7,8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}api/add-analisa",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"add-analisa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Berita",
+			"item": [
+				{
+					"name": "Get List Berita",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}api/get-list-berita",
+							"host": [
+								"{{local_url}}api"
+							],
+							"path": [
+								"get-list-berita"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url",
+			"value": "http://192.168.43.21:5599/"
+		}
+	]
+}
